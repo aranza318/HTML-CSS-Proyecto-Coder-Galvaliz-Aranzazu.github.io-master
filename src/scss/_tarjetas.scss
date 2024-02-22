@@ -1,0 +1,266 @@
+@import "mixins";
+@import "base";
+/* Tarjetas Index */
+.card1 {
+        @include letraslindas;
+        line-height: 200%;
+        > img { @extend .img;}
+        .tamañoletra {
+        font-size: x-large;
+        }
+        .btn {
+            @include boton;
+            line-height: 10%;
+        }
+}
+.card2 {
+        @include letraslindas;
+        line-height: 200%;
+        > img { @extend .img;}
+        .tamañoletra {
+            font-size: x-large;
+            }
+        .btn {
+                @include boton;
+                line-height: 10%;
+            }
+    }
+.card3 {
+        @include letraslindas;
+        line-height: 200%;
+        > img { @extend .img;}
+        .tamañoletra {
+            font-size: x-large;
+            }
+        .btn {
+                @include boton;
+                line-height: 10%;
+            }
+    }
+.cajaX {
+        width: 75%;
+        font-size: xx-large;
+        box-shadow: 1px 1px 2px 2px beige;
+        align-self: center;
+        align-items: center;
+        margin-left: 10%;
+        > img { @extend .img;}
+        .arrowdown {
+            width: 30%;
+            align-self: center;
+            margin-right: 20%;
+            padding: 8%;
+            margin: 15%;
+        }
+    }
+.cajaY {
+        font-size: x-large;
+        > img { @extend .img;}
+        .instagram {
+            width: 40px;
+            height: 40px;
+        }
+        .btninsta {
+            background-color:transparent;
+            border: none;
+            padding-top: 20%;
+            padding-bottom: 20%;
+        }
+        .numerotelefono {
+            text-decoration: none;
+        }
+        .whatsapp {
+            height: 40px;
+            width: 40px;
+            margin-top: 20%;
+            margin-bottom: 20%;
+        }
+    }
+.cajaZ {
+        font-size: xx-large;
+        > img { @extend .img;}
+        .bagheart {
+            font-size: large;
+            width: 40px;
+            margin-bottom: 20%;
+            align-self: center;
+            margin: 30%;
+        }
+    }
+/* Tarjetas Galeria */
+.abstracta1 {
+        margin-top: 10px;
+        margin-left: 9%;
+        @include letraslindas;
+        line-height: 200%;
+        > img { @extend .img;}
+        .btn {
+            @include boton;
+            line-height: 10%;
+        }
+    }
+.abstracta2 {
+        margin-left: 11%;
+        @include letraslindas;
+        line-height: 200%;
+        > img { @extend .img;}
+        .btn {
+            @include boton;
+            line-height: 10%;
+        }
+    }
+.retrato1 {
+        @include letraslindas;
+        line-height: 200%;
+        > img { @extend .img;}
+        .btn {
+            @include boton;
+            line-height: 10%;
+        }
+    }
+.retrato2 {
+        @include letraslindas;
+        line-height: 200%;
+        > img { @extend .img;}
+        .btn {
+            @include boton;
+            line-height: 10%;
+        }
+    }
+/* Tarjetas Obras Abstractas*/
+.abstractaA {
+        grid-area: abstractaA;
+        @include letraslindas;
+        line-height: 200%;
+        > img { @extend .img;}
+        .btn {
+            @include boton;
+            line-height: 10%;
+        }
+        }
+.abstractaB{
+        grid-area: abstractaB;
+        @include letraslindas;
+        line-height: 200%;
+        > img { @extend .img;}
+        .btn {
+            @include boton;
+            line-height: 10%;
+        }
+        }
+.abstractaC{
+        grid-area: abstractaC;
+        @include letraslindas;
+        line-height: 200%;
+        > img { @extend .img;}
+        .btn {
+            @include boton;
+            line-height: 10%;
+        }
+        }
+.abstractaD{
+        grid-area: abstractaD;
+        margin-left: 10%;
+        @include letraslindas;
+        line-height: 200%;
+        > img { @extend .img;}
+        .btn {
+            @include boton;
+            line-height: 10%;
+        }
+        }
+/*Tarjetas Retratos*/
+.retratoA{
+        grid-area: rA;
+        @include letraslindas;
+        line-height: 200%;
+        > img { @extend .img;}
+        .btn {
+            @include boton;
+            line-height: 10%;
+        }
+        }
+.retratoB{
+        grid-area: rB;
+        @include letraslindas;
+        line-height: 200%;
+        > img { @extend .img;}
+        .btn {
+            @include boton;
+            line-height: 10%;
+        }
+        } 
+.retratoC{
+        grid-area: rC;
+        @include letraslindas;
+        line-height: 200%;
+        > img { @extend .img;}
+        .btn {
+            @include boton;
+            line-height: 10%;
+        }
+        }
+.retratoD{
+        grid-area: rD;
+        @include letraslindas;
+        line-height: 200%;
+        > img { @extend .img;}
+        .btn {
+            @include boton;
+            line-height: 10%;
+        }
+        }
+/*Tarjetas Adaptadas Movile*/
+@media screen and (max-width:700px) {
+    .card1 {
+        margin-left: 9%;
+        @include letraslindas;
+    }
+    .card2 {
+            margin-left: 9%;
+            @include letraslindas;
+        }
+    .card3 {
+            margin-left: 9%;
+            @include letraslindas;
+        }
+    .cajaX {
+            margin-left: 19%;
+        }
+    .cajaY {
+            margin-left: 13%;
+        }
+    .cajaZ {
+            margin-left: 13%;
+        }
+    .abstracta1 {
+            margin-top: 10px;
+            margin-right: 20%;
+        }
+    .abstracta2 {
+            margin-right: 20%;
+        }
+    .retrato1 {
+            margin-right: 10%; 
+        }
+    .retrato2 {
+        margin-right: 10%;
+        }
+    .abstractaA {
+            @include letraslindas;
+        }
+    .abstractaB {
+            @include letraslindas;  
+        }
+    .abstractaC {
+            @include letraslindas;
+        }
+    .abstractaD {
+            @include letraslindas;
+            
+        }
+    .parrafo2 {
+            font-size: 16px;
+            grid-area: parrafo2;
+        }    
+}

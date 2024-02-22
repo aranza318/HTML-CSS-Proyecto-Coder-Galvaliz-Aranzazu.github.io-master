@@ -1,0 +1,262 @@
+@import "variables";
+@import "tarjetas";
+@import "mixins";
+/* Estructura general del proyecto */
+/* Body */
+body {
+    font-family: 'Xanh Mono', monospace;
+    background: linear-gradient(to bottom, #000000 10%, #FFE488 90%);
+    background-size: cover;
+    text-align: center;
+    width:100%;
+    overflow-x: hidden;
+    .gidGeneral {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: "header header header header"
+                             "main   main   main   main"
+                             "main   main   main   main"
+                             "footer footer footer footer";
+    }
+} 
+/* Header */
+header {
+    grid-area: header;
+    .gridSuperior {
+        display: grid;
+        grid-template-columns:  3fr 2fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "hamburguesa texto logo";
+        justify-content: center;
+    }
+}
+/* Main */
+main {
+    overflow: hidden;
+    grid-area: main;
+    .titulo {@extend .tamañoA}
+    .titulo1 {@extend .tamañoA}
+    .textocontactos {
+        grid-area: titulo;
+        font-size: xx-large;
+        padding: 10%;
+        text-shadow: 1px 1px 12px #FFE488;
+        color: white ;
+    }
+    .botonSend {
+        display: flex;
+        justify-content: center;
+    }
+    .contenedor {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: "card1    card2    card3"
+                             "cajay    cajax    cajaz";
+        justify-content: center;
+        align-items: center;
+        @each $cards in card1, card2, card3, cajax, cajay, cajaz {
+            .contenedor.#{$cards}{
+             grid-area:#{$cards};
+           }
+        } 
+        .btnbuy {
+            margin: 50%;
+            margin-left: 35%;
+            @include boton;
+        }
+    }
+    .contenedorGaleria {
+        display: grid;
+        grid-template-columns: 200px 400px 400px 200px;
+        grid-template-rows: repeat(2, 1fr);
+        justify-content:space-evenly;
+        align-items: center;
+        gap: 10px;
+        row-gap: 30px;
+        .btn2 {
+        @include boton;
+        margin: 0%;
+        margin-left: 40%;
+        }
+    }
+    .contenedorGaleriaAbs {
+        display: grid;
+        grid-template-columns: 600px 600px;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: " abstractaA abstractaB "
+                             " abstractaC abstractaD ";
+        justify-content:space-evenly;
+        align-items: center;
+        gap: 10px;
+        row-gap: 30px;
+    }
+    .contenedorGaleriaRetratos {
+        display: grid;
+        grid-template-columns: 200px 400px 400px 200px;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: "... rA rB ..."
+                             "... rC rD ...";
+        justify-content:space-evenly;
+        align-items: center;
+        gap: 10px;
+        row-gap: 30px;
+    }
+    .contenedorBio {
+        display: grid;
+        grid-template-columns: 200px 800px 200px;
+        grid-template-rows: 80px 700px;
+        grid-template-areas: "...   tituloBio     ..."
+                             "...   parrafo2      ...";
+        justify-content: center;
+        align-items: center;
+        .tituloBio {
+            margin-top: 10%;
+            font-size: xx-large;
+            margin-bottom: 3%;
+            grid-area: tituloBio;
+            text-shadow: 1px 1px 12px #FFE488;
+            color: white ;
+        }
+        .parrafo2 {
+            grid-area: parrafo2;
+            font-size:x-large;
+            margin-top: 10%;
+            margin-bottom: 5%;
+            color: white;
+            text-shadow: 1px 1px 12px #FFE488;
+        }
+    }
+}
+/* Footer */
+footer {
+    margin-top: 30px;
+    align-self: center;
+    align-content: center;
+    grid-area: footer;
+    h3 {
+        font-size: x-large;
+    }
+}
+/* Sector movile */
+@media screen and (max-width:900px) { 
+        body {
+            overflow-x: hidden;
+            .gidGeneral {
+                overflow-x: hidden;
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(3, 1fr);
+                grid-template-areas: "header"
+                                     "main"
+                                     "footer";
+            }
+        }
+        header {
+            overflow-x: hidden;
+            grid-area: header;
+            .gridSuperior {
+                display: grid;
+                grid-template-columns:  1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+                grid-template-areas: "hamburguesa texto logo";
+                justify-content: center;
+            }
+        }
+        main {
+            grid-area: main;
+            .titulo {
+                align-self: center;
+            }
+            .titulo1 {
+                align-self: center;
+                margin-right: 17%;
+            }
+            .contenedor {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+                grid-template-areas: "card1"
+                                     "card2" 
+                                     "card3"
+                                     "cajay"
+                                     "cajax"
+                                     "cajaz";
+                justify-content: center;
+                align-items: center;
+                margin-left: 0%;
+                margin-right: 10%;
+                margin-bottom: 3%;
+                .btnbuy {
+                    margin: 60%;
+                    margin-left: 28%;
+                }
+            }
+            .contenedorGaleria {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 60px;
+                justify-content:space-evenly;
+                align-items: center;
+                gap: 10px;
+                row-gap: 30px;
+                margin-bottom: 5%;
+                margin-left: 10%;
+                width: fit-content;
+                .btn2 {
+                    @include boton;
+                    margin: 0%;
+                    margin-left: 35%;
+                    }
+            }
+            .contenedorGaleriaAbs {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+                grid-template-areas: "abstractaA" 
+                                     "abstractaB"
+                                     "abstractaC"
+                                     "abstractaD";
+                justify-content:space-evenly;
+                align-items: center;
+                gap: 10px;
+                row-gap: 30px;
+            }
+            .contenedorGaleriaRetratos {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+                grid-template-areas: "rA" 
+                                     "rB"
+                                     "rC"
+                                     "rD";
+                justify-content:space-evenly;
+                align-items: center;
+                gap: 10px;
+                row-gap: 10px;
+                padding-right: 5%;
+                padding-left: 5%;
+            }
+            .contenedorBio {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 80px 600px;
+                grid-template-areas: "tituloBio"
+                                     "parrafo2";
+                justify-content: center;
+                align-items: center;
+                .parrafo2 {
+                    margin: 5%;
+                    font-size: 16px;
+                }
+            }
+    }
+    footer {
+        grid-area: footer;
+        margin-top: 30px;
+        align-self: center;
+        align-content: center;
+    }
+    }

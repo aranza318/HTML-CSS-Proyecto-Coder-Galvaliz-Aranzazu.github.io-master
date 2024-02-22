@@ -1,0 +1,235 @@
+@import "mixins";
+@import "variables";
+
+header {
+    grid-area: header;
+    flex-flow: row;
+    justify-content: center;
+    box-shadow: #FFF 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px, 5px 5px 15px 5px rgba(0,0,0,0);
+    height: fit-content;
+    width: 100%;
+    .headertext {
+        grid-area: texto;
+        font-size: xx-large;
+        display: flex;
+        margin-top: 26%;
+        margin-left: 25%;
+    }
+     nav {
+        grid-area: hamburguesa;
+        width:100%;
+        height:80px;
+        padding: 1em;
+        text-decoration: none;
+        margin-left: 10%;
+        margin-top: 12%;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        .navbar {
+            text-decoration: none;
+            background-color:none;
+            display: flex;
+            flex-flow: row;
+            height: 250px;
+            width: auto;
+            align-items:center;
+            justify-content: center;
+            ul { 
+                list-style: none;
+                margin-top: 40%;
+                display: flex;
+                flex-flow: row;
+                align-items: center;
+                justify-content: end;
+                width:100%;
+                gap: 2%;
+                li {
+                    position: relative;
+                    background-color: pink;
+                    &:hover{
+                        background: #D9B9;
+                    }
+                    a {
+                        display: block;
+                        text-decoration: none;
+                    }
+                }
+            }
+            > label::before {
+                content: icon;
+                color: indigo;
+                background: transparent;
+                font-size: xx-large;
+                font-family: fontAwesome;
+                display: none;
+                cursor: pointer;
+                overflow: auto;
+                border: transparent;
+                position: absolute;
+                background-color: #80C7FF;
+            }
+        }
+        }
+        .navInput {
+        appearance: none;
+             > input [type=checkbox]{
+            display: none;
+            visibility: hidden;
+        }
+        }
+        .navLabel {
+            display: block;
+            color: white;
+            font-size: xx-large;
+            font-weight: bold;
+            border-radius: 0.3em;
+            position: absolute;
+            top: 0.5em;
+        }
+        .navInput:checked + .ul_menu {
+            clip-path: circle(100% at center);
+        }
+        > input:checked + .ul_menu{
+            display: flex;
+            
+        } 
+    }
+    a {
+        color: #000;
+        &:hover{color: white;}
+        margin-top: 50%;
+        text-decoration: none;
+        appearance: none;
+        .headertext {
+        text-decoration: none;
+        #colortitulo {
+            color: $colortitulo;
+            text-shadow: 2px 2px 3px black;
+        }
+    }
+    }
+    .logo {
+        margin-bottom: 10%;
+        height: fit-content;
+        width: fit-content;
+        display: flex;
+        grid-area: logo;
+        > img {
+            height: 80px;
+            width: fit-content;
+            position: end;
+            margin-left: 0%;
+            margin-top: 100%;
+            margin-left: 0%;
+            justify-content: center;
+        } 
+    }
+/* Header movile*/
+@media screen and (max-width:700px) { 
+    .headerFull {
+        height: 230px;
+        width: 100%;
+    }
+    .logo {
+        padding: 10%;
+        position:relative;
+    }
+    .headertext {
+        padding-top: 22%;
+        padding-right: 49%;
+        margin-top: 30%;
+        color: $colortitulo;
+        text-shadow: 2px 2px 3px black;
+        text-decoration: none;
+    }
+    .navbar {
+    text-decoration: none;
+    justify-content: space-between;
+    position:absolute;
+    width: 100vw;
+    > label::before {
+        display: block;
+        padding: 20px;
+    }
+    > ul {
+        text-decoration: none;
+        margin-top: 5%;
+        position: fixed;
+        top: 80px;
+        flex-direction: column;
+        display: flex;
+        width: 250px;
+        height: calc(100vh - 70px);
+        justify-content: start;
+        padding-top: 40px;
+        align-items: center;
+        bottom: 0;
+        left: -500px;
+        transition: 0.2s;
+        z-index: 2;
+        &:hover {
+            left:0;
+        }
+        > li {
+             @include colorli (pink);
+             gap: 1px;
+               }
+        .li {
+            text-decoration: none;
+        }
+    }
+    }
+    .navbar > input[type=checkbox]:checked + label::before {
+            content: "\58";
+    }
+    .navbar > input[type=checkbox]:checked + ul {
+            left: 0;
+    }
+    .navInput {
+        display: none;
+    }
+}
+
+@media screen and (min-width:700px){
+    a:link, a:visited, a:active {
+        text-decoration:none;
+    }
+    .headertext {
+        padding: 5%;
+        margin-left: 10%;
+        margin-top: 40%;
+        color: $colortitulo;
+        text-shadow: 2px 2px 3px rgb(0, 0, 0);
+        text-decoration:none;
+        }
+    .navbar
+     > ul{
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        >.ul_menu,  .navInput {
+            display: none;
+        }
+        > li {
+            @include colorli (rgba(247, 247, 123, 0.92));
+            text-decoration: none; 
+            align-items: center;
+                    text-align: center;
+                    line-height: 85%;
+                    height: 50px;
+                    width: 130px;
+        }
+        }
+        }
+    
+@media screen and (min-width:700px) {
+    .fa-solid.fa-bars::before {
+        visibility: hidden;
+    }
+    .fa-solid.fa-x::before {
+        visibility: hidden;
+    }
+    
+    }
+   

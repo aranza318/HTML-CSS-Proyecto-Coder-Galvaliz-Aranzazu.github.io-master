@@ -1,0 +1,132 @@
+/* Contenido Boostrap */
+header {
+    height: 230px;
+}
+.headerFullB {
+    padding: 5%;
+    height: 230px;
+    width: 100%;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    a {
+        text-decoration: none;
+    }
+    .headertextB {
+        padding-top:30%;
+        padding-left: 0%;
+        display: flex;
+        margin-top: 30%;
+        margin-left: 12%;
+        font-size: xx-large;
+        text-decoration: none;
+        text-align: center;
+        line-height: 37px;
+        color: $colortitulo;
+        &:hover { color: white ;}
+        text-shadow: 2px 2px 3px black;
+    }
+    .logo {
+        height: fit-content;
+        width: fit-content;
+        margin-top: 30%;
+        padding: 10%;
+        display: flex;
+        position:sticky;
+        grid-area: logo;
+        > img {
+            height: 70px;
+            width: fit-content;
+            margin-left: 15%;
+            margin-top: 0%;
+            margin-left: 50%;
+            justify-content: center;
+        } 
+    }
+}
+/* Version Desktop */
+@media  screen and (min-width:601px) {
+    .headerFullB {
+            justify-content: space-between;
+            height: 230px;
+            width: 100%;
+        nav {
+            margin-top: 4%;
+            margin-left: 0%;
+            ul {
+                li {
+                    align-items: center;
+                    text-align: center;
+                    line-height: 85%;
+                    height: 50px;
+                    width: 130px;
+                } 
+            }
+        }
+        #navbarBs {
+            margin-top: 30%;
+        }
+        .navInput {
+            display: none;
+        }
+        .headertextB {
+            margin-left: 25%;
+            padding-top: 13%;
+            margin-top: 8%;
+            display: flex;
+            font-size: xx-large;
+            text-decoration: none;
+            text-align: center;
+        }   
+        .logo {
+            height:fit-content;
+            width: fit-content;
+            display: flex;
+            grid-area: logo;
+            margin-top:0% ;
+            > img {
+                height: 80px;
+                position:relative;
+                margin-bottom: 70%;
+                margin-right: 20px;
+                padding-right: 35%;
+                margin-left: 20%;
+                justify-content: start;
+                
+            } 
+    }
+    main {
+        padding: 32px;
+        border: 10ch;
+        .row {
+            width: 500px;
+            height: 600px;
+        form {
+            width: 50%;
+            display: inline-block;
+            padding: 10%;
+            width: 400px;
+            height: 500px;
+            .formulario1 {
+                margin: 50%;
+                display: flex;
+                justify-content: center!important;
+                padding: 100%;
+            > .txtContact {
+                justify-content: center;
+                display: inline-block;
+                width: 80%;
+           }
+        }
+    }
+    }
+    }
+    .footerB{
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        margin-left: 5%;
+        font: bolder;
+    }
+}
+}
